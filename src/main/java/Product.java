@@ -17,14 +17,19 @@ public class Product {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите количество гостей");
 
-        //int number = 0;
-        int number = scanner.nextInt();
+        int number = 0;
         while(true) {
-            if(number <= 1) {
-                System.out.println("Неверный ввод данных, введите заново");
+            if(scanner.hasNextInt()) {
                 number = scanner.nextInt();
-            }else break;
+                if(number <= 1) {
+                    System.out.println("Неверный ввод");
+                }else break;
+            }else {
+                scanner.next();
+                System.out.println("неверный ввод");
+            }
         }
+
         return number;
     }
 
@@ -41,6 +46,10 @@ public class Product {
                 break;
             }else {
                 System.out.println("Введите цену в формате: рубли, копейки");
+                while(!scanner.hasNextDouble()) {
+                    System.out.println("Неверный ввод");
+                    scanner.next();
+                }
                 double price = scanner.nextDouble();
                 productMap.put(name, price);
                 System.out.println(name + " успешно добавлен");

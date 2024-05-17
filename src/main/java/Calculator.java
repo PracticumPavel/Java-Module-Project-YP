@@ -15,10 +15,8 @@ public class Calculator {
                 System.out.println(name + ": " + productMap.get(name));
             }
 
-            String word = Formatter.declensionOfWords(sum);
             float rezult = (float)sum/number;
-
-
+            String word = Formatter.declensionOfWords(rezult);
 
             System.out.println(String.format("Каждый гость заплатит: %.2f" + " " + word, rezult));
         }

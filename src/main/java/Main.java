@@ -9,5 +9,6 @@ public class Main {
         HashMap<String, Double> map = Product.addAProduct();
 
         Calculator.calculate(number, map);
+
     }
 }
