@@ -1,6 +1,14 @@
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        int number = Product.numberOfVisitors();
+
+        HashMap<String, Double> map = Product.addAProduct();
+
+        Calculator.calculate(number, map);
+
     }
 }
